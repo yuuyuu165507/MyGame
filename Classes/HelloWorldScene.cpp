@@ -116,9 +116,27 @@ bool HelloWorld::init()
     //    this->addChild(sprite, 0);
     //}
 
-	Sprite*sprite = Sprite::create("DrStrangelove060Pyxurz.png");
+	sprite = Sprite::create("oronaminc.png");
 	this->addChild(sprite);
+	//À•W‚ðŽw’è
+	sprite->setPosition(Vec2(1100, 500));
+	//‰ñ“]Šp‚ðŽw’è(45“x)
+	//sprite->setRotation(45.0f);
+	//Šgk‚ðŽw’è(‰¡3”{Ac4”{)
+	//sprite->setScale(3.0f, 4.0f);
+	//¶‰E”½“]
+	//sprite->setFlippedX(true);
+	//ã‰º”½“]
+	//sprite->setFlippedY(true);
+	//”ñ•\Ž¦‚É‚·‚é
+	//sprite->setVisible(false);
+	//F‡‚¢‚ðÝ’è
+	//sprite->setColor(Color3B(0xff, 0x00, 0x00));
+	//•s“§–¾“x‚ðÝ’è
+	//sprite->setOpacity(0x80);
 
+	// update‚ªŒÄ‚Ño‚³‚ê‚é‚æ‚¤‚É‚·‚é
+	this->scheduleUpdate(); 
 
     return true;
 }
@@ -133,6 +151,24 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 
     //EventCustom customEndEvent("game_scene_close_event");
     //_eventDispatcher->dispatchEvent(&customEndEvent);
+
+
+}
+
+void HelloWorld::update(float delta)
+{
+    //ƒXƒvƒ‰ƒCƒg‚ÌŒ»ÝÀ•W‚ðŽæ“¾
+	Vec2 pos = sprite->getPosition();
+	//À•W‚ðˆÚ“®‚³‚¹‚é
+	pos += Vec2(-5.0f,0.0f);
+	//ˆÚ“®Œã‚ÌÀ•W‚ð”½‰f
+	sprite->setPosition(pos);
+
+
+	float opa = sprite->getOpacity();
+	opa -= 1;
+	sprite->setOpacity(opa);
+
 
 
 }
