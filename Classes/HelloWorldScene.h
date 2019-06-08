@@ -43,6 +43,10 @@ public:
 
 	// スプライト
 	cocos2d::Sprite* sprite;
+
+	int counter;
+
+	int state;
 };
 
 #endif // __HELLOWORLD_SCENE_H__
